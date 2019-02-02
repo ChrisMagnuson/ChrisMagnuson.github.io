@@ -20,6 +20,10 @@ The InDesign Server uses the source port number to differentiate between clients
 
 In practice most libraries for working with SOAP apis don't allow you this low level of control which means you end up needing to access InDesign from separate processes that each create their own tcp session to connect to the InDesign Server for you not to recieve errors that your already in an existing session when calling BeginSession multiple times.
 
+Max Dunn (one of the co-founders of Silicone publishing) has an excellent write up on the history of Scene 7 Web to print and InDesign Server that could probably have been written by no one other than himself. If there is a survivor in the apaclyptic city where InDesign Server flourished it is Max and the band of whatever companies hired Silicone publishing.
+
+
+
 For now your better off using multiple InDesign Server instances as this is the happy path that has been well tested and used by many before. The session based functiuonalty makes a lot of sense and should be there but unforutunately looks like it was poorly implemented with no sign in the last 8 years that they are going to improve it.
 
 On that note, if your getting into InDesign server development now as I am your pretty late to the game. There have been amazing opensource communites that have come, thrived, and died around extending and working with InDesign Server all before you have arrived.
