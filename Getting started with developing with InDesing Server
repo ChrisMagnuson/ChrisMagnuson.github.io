@@ -1,0 +1,31 @@
+You will need a createive cloud account to be able to access the trial of InDesign server easily and you will also need InDesing CC for doing development against as troubleshooting your java script directly against the server is difficult.
+
+Once you have a creative cloud account you can start your 90 day fully featured trial by going here: https://www.adobe.com/devnet/indesign/indesign-server-trial-downloads.html
+
+On that note, you will be writing your code in Javascript. At some time in the past you could have made the choice between using vbscript or applescript but if your starting out and your not super familar with any of the three there is no question in my mind, use javascript and just forget about the others.
+
+You will be able to find far more examples online of how to do the logic of what you might want to do in your code in javascript than either of the other languages and whatever you develop in javascript is portable and uasble on any InDesign Server instance whether running on Windows or MacOSX.
+
+From my personal experience I would also plan to run this on Windows regardless of whether your a Apple shop or not as it is clear that InDesign Server on Windows is the happy path with the best support for managing and monitoring InDesign server instances as services without extra work that is needed on OSX.
+
+For purcahasing InDesign server you will want to read this: https://www.adobe.com/content/dam/acom/en/products/indesignserver/InDesign%20CC%20Server%20Product%20and%20Licensing%20Guide%202018.pdf
+
+Purchasing InDesign server used to be more complicated with different multi instance pricing vs singe instance but now it really comes down to one dimension when licesing it for production use, are people going to able to directly trigger and action on the InDesign server who are not on your payroll or not?
+
+If people who aren't employees are going to be use it buy Premium, if your sure that will never happen, then you can go wtih limited.
+
+No matter what you will end up with licensing for multiple instances which will likely also be important as though their soap server implementation (based on gsaop) has session based semantics (BeginSession, EndSession) in practice I have found them unsuable (though I think once I finally crack the secret of its quirks it will be a faster and better way to go).
+
+The InDesign Server uses the source port number to differentiate between clients so to be able to start a session and continue it you need to associate a single TCP session (SYN, SYNACK, ACK) with a given logical soap session.
+
+In practice most libraries for working with SOAP apis don't allow you this low level of control which means you end up needing to access InDesign from separate processes that each create their own tcp session to connect to the InDesign Server for you not to recieve errors that your already in an existing session when calling BeginSession multiple times.
+
+For now your better off using multiple InDesign Server instances as this is the happy path that has been well tested and used by many before. The session based functiuonalty makes a lot of sense and should be there but unforutunately looks like it was poorly implemented with no sign in the last 8 years that they are going to improve it.
+
+On that note, if your getting into InDesign server development now as I am your pretty late to the game. There have been amazing opensource communites that have come, thrived, and died around extending and working with InDesign Server all before you have arrived.
+
+It at times feels like walking through a city after some apacalytpic event eliminated everyone. They were all here doing amazing things, like porting the http impelmentation from NodesJS to InDesign Servers javascript runtime but all those people are gone and your now on your own with all the technology they left behind by none of the people around to talk to.
+
+For me this started due to Adobe decomissiong the web to print component of their Scene 7 service which we depended on. A good and reasonable alternative to Scene 7 Web to print is Silicone Publishing's products. They have a drop in replacement for Scene 7 web to print as well as some other offerings and from what I have seen they are very good but you will still have to purcahse an InDesign Server license regardless.
+
+In our case the scope of what we needed was constrained enough that I felt we could make a go of it with InDesign Server alone and have been able to be succsseful with that path.
