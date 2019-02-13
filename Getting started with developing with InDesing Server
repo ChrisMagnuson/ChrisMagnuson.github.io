@@ -33,3 +33,6 @@ It at times feels like walking through a city after some apacalytpic event elimi
 For me this started due to Adobe decomissiong the web to print component of their Scene 7 service which we depended on. A good and reasonable alternative to Scene 7 Web to print is Silicone Publishing's products. They have a drop in replacement for Scene 7 web to print as well as some other offerings and from what I have seen they are very good but you will still have to purcahse an InDesign Server license regardless.
 
 In our case the scope of what we needed was constrained enough that I felt we could make a go of it with InDesign Server alone and have been able to be succsseful with that path.
+
+
+https://helpx.adobe.com/indesign/using/indesign-server.html
