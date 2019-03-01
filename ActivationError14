@@ -1,3 +1,15 @@
 If you get return Code 14 try running the activation process from a system with nothing installed
 Adobe reader was called out as specifcally one that might cause issues but I tried the activation from a server with only InDesign Server and it still failed
 Doing it from a system with absolutely nothing installed worked.
+
+
+https://helpx.adobe.com/indesign/kb/known-licensing-issues-with-adobe-indesign-server.html
+
+https://helpx.adobe.com/indesign/kb/indesign-server-licensebecomesdeactivatedwheninstalledonavmthati.html
+
+Getting your license
+https://licensing.adobe.com
+
+Getting support from adobe
+The first person won't know about indesign server but if you tell them that is the product you need support with they will transfer you to a team that knows that product
+https://helpx.adobe.com/contact.html
