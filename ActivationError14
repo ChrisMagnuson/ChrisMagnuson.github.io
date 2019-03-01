@@ -1,0 +1,3 @@
+If you get return Code 14 try running the activation process from a system with nothing installed
+Adobe reader was called out as specifcally one that might cause issues but I tried the activation from a server with only InDesign Server and it still failed
+Doing it from a system with absolutely nothing installed worked.
