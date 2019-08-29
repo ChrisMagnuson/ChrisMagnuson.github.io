@@ -1,0 +1,11 @@
+To deal with separate modules you will want to do an npm link in the directory of the package you want to refer to from other packages and have them use the local version and not the version from npm
+In the package that uses this one as a dependency you do an npm link <PackageName>
+
+This might have problems if your tyring to use unpkg to do universal module development
+
+Method for achieving universal module development with the latest versions of everything for rapid prototyping
+ES6 modules
+npm link
+unpkg.js ?module
+local unpkg.js
+local cors bypass
